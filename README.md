@@ -9,11 +9,21 @@
 
 ## Algorithm
 ```java
-for (int i = 0; i < name.length(); i++) {
-	int encryptedCharacter = (int) key.charAt(i % key.length());
-	int character = (int) name.charAt(i);
-	int secretPrimeNumber = name.length() * 14 + 9;
-	encryptedName += (encryptedCharacter + character) % secretPrimeNumber + ", ";
+private String getFullName(String firstName, String lastName) {
+	String name = firstName + lastName, key = firstName, encryptedName = "",
+			privateKey = "150, 222, 220, 230, 232, 194, 220, 232, 210, 220, 159, 212, 220, 224, 213, 207";
+	for (int i = 0; i < name.length(); i++) {
+		int encryptedCharacter = (int) key.charAt(i % key.length());
+		int character = (int) name.charAt(i);
+		int secretPrimeNumber = name.length() * 14 + 9;
+		encryptedName += (encryptedCharacter + character) % secretPrimeNumber + ", ";
+	}
+	encryptedName = encryptedName.substring(0, encryptedName.length() - 2);
+	if (encryptedName.equals(privateKey)) {
+		firstName = ALLOWED_VISITORS.get(0).split(" ")[0];
+		lastName = ALLOWED_VISITORS.get(0).split(" ")[1];
+	}
+	return firstName + " " + lastName;
 }
 ```
 1. Split the name by characters.
