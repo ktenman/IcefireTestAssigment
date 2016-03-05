@@ -9,7 +9,7 @@ public class Encryption {
     	for (int i = 0; i < name.length(); i++) {
     		int encryptedCharacter = (int) key.charAt(i % key.length());
     		int character = (int) name.charAt(i);
-    		int secretNumber = name.length() * 14 + 8;
+    		int secretNumber = name.length() * 14 + 9;
     		encryptedName += (encryptedCharacter + character) % secretNumber + ", ";
     	}
 		return encryptedName.substring(0, encryptedName.length()-2);
@@ -26,9 +26,9 @@ public class Encryption {
 			int character = (int) numbers[i];
 			int decryptedCharacter = character - encryptedCharacter;
 			if (decryptedCharacter < 0) {
-				decryptedCharacter = (((decryptedCharacter % 232) + 232) % 232);
+				decryptedCharacter = (((decryptedCharacter % 233) + 233) % 233);
 			} else {
-				decryptedCharacter = decryptedCharacter % 232;
+				decryptedCharacter = decryptedCharacter % 233;
 			}
 		numbers[i] = decryptedCharacter;
 		}

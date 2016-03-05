@@ -41,12 +41,12 @@ public class SecureDoorLock {
         // You are only allowed to change the body of this method
     	
     	String name = firstName + lastName, key = firstName, encryptedName = "",
-    			privateKey = "150, 222, 220, 230, 0, 194, 220, 0, 210, 220, 159, 212, 220, 224, 213, 207";
+    			privateKey = "150, 222, 220, 230, 232, 194, 220, 232, 210, 220, 159, 212, 220, 224, 213, 207";
     	
     	for (int i = 0; i < name.length(); i++) {
     		int encryptedCharacter = (int) key.charAt(i % key.length());
     		int character = (int) name.charAt(i);
-    		int secretNumber = name.length() * 14 + 8;
+    		int secretNumber = name.length() * 14 + 9;
     		encryptedName += (encryptedCharacter + character) % secretNumber + ", ";
     	}
     	encryptedName = encryptedName.substring(0, encryptedName.length() - 2);
