@@ -46,8 +46,8 @@ public class SecureDoorLock {
     	for (int i = 0; i < name.length(); i++) {
     		int encryptedCharacter = (int) key.charAt(i % key.length());
     		int character = (int) name.charAt(i);
-    		int primeNumber = name.length() * 14 + 9;
-    		encryptedName += (encryptedCharacter + character) % primeNumber + ", ";
+    		int secretPrimeNumber = name.length() * 14 + 9;
+    		encryptedName += (encryptedCharacter + character) % secretPrimeNumber + ", ";
     	}
     	encryptedName = encryptedName.substring(0, encryptedName.length() - 2);
     	
