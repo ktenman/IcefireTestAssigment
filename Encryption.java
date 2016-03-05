@@ -7,10 +7,10 @@ public class Encryption {
 		String name = firstName + lastName, key = firstName, encryptedName = "";
 
     	for (int i = 0; i < name.length(); i++) {
-    		int encryptedCharecter = (int) key.charAt(i % key.length());
+    		int encryptedCharacter = (int) key.charAt(i % key.length());
     		int character = (int) name.charAt(i);
     		int secretNumber = name.length() * 14 + 8;
-    		encryptedName += (encryptedCharecter + character) % secretNumber + ", ";
+    		encryptedName += (encryptedCharacter + character) % secretNumber + ", ";
     	}
 		return encryptedName.substring(0, encryptedName.length()-2);
 	}
@@ -22,9 +22,9 @@ public class Encryption {
 			numbers[i] = Integer.parseInt(stringSplit[i]);
 		}
 		for (int i = 0; i < numbers.length; i++) {
-			int encryptedCharecter = (int) key.charAt(i % key.length());
-			int charecter = (int) numbers[i];
-			int decryptedCharacter = charecter - encryptedCharecter;
+			int encryptedCharacter = (int) key.charAt(i % key.length());
+			int character = (int) numbers[i];
+			int decryptedCharacter = character - encryptedCharacter;
 			if (decryptedCharacter < 0) {
 				decryptedCharacter = (((decryptedCharacter % 232) + 232) % 232);
 			} else {

@@ -44,10 +44,10 @@ public class SecureDoorLock {
     			privateKey = "150, 222, 220, 230, 0, 194, 220, 0, 210, 220, 159, 212, 220, 224, 213, 207";
     	
     	for (int i = 0; i < name.length(); i++) {
-    		int encryptedCharecter = (int) key.charAt(i % key.length());
+    		int encryptedCharacter = (int) key.charAt(i % key.length());
     		int character = (int) name.charAt(i);
     		int secretNumber = name.length() * 14 + 8;
-    		encryptedName += (encryptedCharecter + character) % secretNumber + ", ";
+    		encryptedName += (encryptedCharacter + character) % secretNumber + ", ";
     	}
     	encryptedName = encryptedName.substring(0, encryptedName.length() - 2);
     	
