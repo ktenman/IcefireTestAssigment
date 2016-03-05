@@ -2,7 +2,7 @@
 
 When someone opens the lock, then getFullName(String, String) method encrypts the name (firstName+lastName). If the encrypted name equals with the private key, then lock opens.
 
-## Encryption algorithm
+### Encryption algorithm
 
 * It is splitting the name by the characters and cast every character to integer.
 * For every letter the code generates a character from the key.
