@@ -9,8 +9,8 @@ public class Encryption {
     	for (int i = 0; i < name.length(); i++) {
     		int encryptedCharacter = (int) key.charAt(i % key.length());
     		int character = (int) name.charAt(i);
-    		int secretNumber = name.length() * 14 + 9;
-    		encryptedName += (encryptedCharacter + character) % secretNumber + ", ";
+    		int primeNumber = name.length() * 14 + 9;
+    		encryptedName += (encryptedCharacter + character) % primeNumber + ", ";
     	}
 		return encryptedName.substring(0, encryptedName.length()-2);
 	}
