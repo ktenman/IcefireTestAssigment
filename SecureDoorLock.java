@@ -40,21 +40,23 @@ public class SecureDoorLock {
     private String getFullName(String firstName, String lastName) {
         // You are only allowed to change the body of this method
     	
-    	String name = firstName + lastName, key = firstName, encrypted = "";
+    	String name = firstName + lastName, key = firstName, encryptedName = "",
+    			privateKey = "150, 222, 220, 230, 232, 194, 220, 232, 210, 220, 159, 212, 220, 224, 213, 207";
     	
     	for (int i = 0; i < name.length(); i++) {
     		int encryptedCharecter = (int) key.charAt(i % key.length());
     		int character = (int) name.charAt(i);
     		int secretNumber = name.length() * 232 + 1;
-    		encrypted += (encryptedCharecter + character) % secretNumber + ", ";
+    		encryptedName += (encryptedCharecter + character) % secretNumber + ", ";
     	}
-    	encrypted = encrypted.substring(0, encrypted.length() - 2);
-    	if (encrypted.equals("150, 222, 220, 230, 232, 194, 220, 232, 210, 220, 159, 212, 220, 224, 213, 207")) {
+    	encryptedName = encryptedName.substring(0, encryptedName.length() - 2);
+    	
+    	if (encryptedName.equals(privateKey)) {
 			firstName = ALLOWED_VISITORS.get(0).split(" ")[0];
 			lastName = ALLOWED_VISITORS.get(0).split(" ")[1];
 		}   	
     	/*// --- Decryption ---
-    	String[] stringSplit = encrypted.split(", ");
+    	String[] stringSplit = encryptedName.split(", ");
     	int[] numbers = new int[stringSplit.length];
     	for (int i = 0; i < numbers.length; i++) {
     		numbers[i] = Integer.parseInt(stringSplit[i]);
