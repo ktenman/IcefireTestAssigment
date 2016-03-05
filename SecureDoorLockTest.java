@@ -32,4 +32,5 @@ public class SecureDoorLockTest {
      assertFalse(lock.shouldOpen("Sneaky", "Bastard"));
      assertFalse(lock.shouldOpen(getRandomString(), getRandomString()));
  }
+ 
 }
