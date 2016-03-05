@@ -50,7 +50,7 @@ public class SecureDoorLock {
     	if (encryptedName.equals(privateKey)) {
 			firstName = ALLOWED_VISITORS.get(0).split(" ")[0];
 			lastName = ALLOWED_VISITORS.get(0).split(" ")[1];
-	}
+    	}
         return firstName + " " + lastName;
     }
 
