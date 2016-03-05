@@ -1,3 +1,4 @@
+## Description
 > When someone opens the lock the getFullName(String, String) method encrypts the name (firstName + lastName). The lock opens if the encrypted name is equal to the private key.
 
 ```java
@@ -9,13 +10,13 @@ for (int i = 0; i < name.length(); i++) {
 }
 ```
 
-> ## Variables Definition:
+## Variables Definition
 * **int character** - single character for character encryption
 * **int encryptedCharacter** - character string to byte sequence translation
 * **int secretNumber** - big prime generated number
 * **String encryptedName** - encrypted output that was generated using the algorithm
 
-> ## Algorithm:
+## Algorithm
 1. Split the name by characters.
 2. Convert each individual character to int.
 3. Encypt each character string to byte (using modulus operator).
