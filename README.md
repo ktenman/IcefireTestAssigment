@@ -1,6 +1,6 @@
->When someone opens the lock the getFullName(String, String) method encrypts the name (firstName + lastName) . The lock opens if the encrypted name is equal to the private key.
+>When someone opens the lock the getFullName(String, String) method encrypts the name (firstName + lastName). The lock opens if the encrypted name is equal to the private key.
 
-```
+```java
 for (int i = 0; i < name.length(); i++) {
 	int encryptedCharacter = (int) key.charAt(i % key.length());
 	int character = (int) name.charAt(i);
