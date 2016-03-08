@@ -10,13 +10,14 @@ public class Encryption {
     		int encryptedCharacter = (int) key.charAt(i % key.length());
     		int character = (int) name.charAt(i);
     		int secretPrimeNumber = name.length() * 14 + 9;
-    		encryptedName += (encryptedCharacter + character) % secretPrimeNumber + ", ";
+    		encryptedName += (encryptedCharacter + character) % secretPrimeNumber + " ";
     	}
-		return encryptedName.substring(0, encryptedName.length()-2);
+		return encryptedName;
 	}
 	
 	protected static String decrypt(String encryptedName, String key) {
-		String[] stringSplit = encryptedName.split(", ");
+		encryptedName = encryptedName.substring(0, encryptedName.length() - 1);
+		String[] stringSplit = encryptedName.split(" ");
 		int[] numbers = new int[stringSplit.length];
 		for (int i = 0; i < numbers.length; i++) {
 			numbers[i] = Integer.parseInt(stringSplit[i]);
